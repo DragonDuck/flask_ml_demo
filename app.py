@@ -1,1 +1,1 @@
-from digit_classifier import *
+from flask_ml_demo import *
