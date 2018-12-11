@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
-from digit_classifier.forms import SubmitForm
-from digit_classifier.model import classify_image
+from flask_ml_demo.forms import SubmitForm
+from flask_ml_demo.model import classify_image
 import os
 
 
