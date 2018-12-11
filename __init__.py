@@ -26,6 +26,8 @@ def create_app():
             fname = uploaded_file.filename
             if file_allowed(fname):
                 img_source = os.path.join("static", app.config["UPLOAD_FOLDER"], fname)
+                if not os.path.isdir(os.path.join("static", app.config["UPLOAD_FOLDER"])):
+                    os.makedirs(os.path.join("static", app.config["UPLOAD_FOLDER"]))
                 uploaded_file.save(img_source)
                 digit = classify_image(img_source)
                 return render_template("result.html", img_source=img_source, digit=digit)
